@@ -1,4 +1,3 @@
-\
 <!doctype html>
 <html lang="ko">
 <head>
@@ -68,6 +67,18 @@
       transition: transform .2s ease;
     }
     .skip-link:focus { transform: translateY(0); }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
 
     .hero {
       position: relative;
@@ -223,7 +234,7 @@
       position: sticky;
       top: 10px;
       z-index: 20;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
       padding: 18px;
       border: 1px solid rgba(220,229,223,.95);
       border-radius: var(--radius-xl);
@@ -234,8 +245,9 @@
 
     .search-row {
       display: grid;
-      grid-template-columns: minmax(240px, 1fr) auto;
+      grid-template-columns: minmax(240px, 1fr) auto auto;
       gap: 12px;
+      align-items: center;
     }
 
     .search-wrap {
@@ -281,6 +293,46 @@
       cursor: pointer;
     }
     .reset-btn:hover { background: var(--forest-050); }
+
+    .filter-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 44px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      color: var(--forest-900);
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .filter-toggle[data-active="true"] {
+      border-color: var(--forest-700);
+      background: var(--forest-050);
+    }
+
+    .filter-toggle-count {
+      display: inline-grid;
+      place-items: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: var(--forest-800);
+      color: #fff;
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .filter-toggle-count[hidden] { display: none; }
+
+
+    .mobile-filter-actions { display: none; }
 
     .filter-label {
       margin: 16px 0 8px;
@@ -364,6 +416,27 @@
       border-color: #e5b846;
       background: var(--yellow-soft);
       color: var(--yellow);
+    }
+
+    .mobile-filter-reset,
+    .mobile-filter-done {
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 13px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .mobile-filter-reset {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--forest-900);
+    }
+
+    .mobile-filter-done {
+      border: 1px solid var(--forest-800);
+      background: var(--forest-800);
+      color: #fff;
     }
 
     .summary-row {
@@ -710,10 +783,6 @@
       .base-card { grid-template-columns: 1fr; }
       .hero-btn { width: 100%; }
       main { padding-top: 17px; }
-      .toolbar { top: 6px; padding: 13px; border-radius: 20px; }
-      .search-row { grid-template-columns: 1fr; }
-      .reset-btn { min-height: 42px; }
-      .select-row { grid-template-columns: 1fr 1fr; }
       .summary-row { align-items: flex-start; flex-direction: column; }
       .checked-at { white-space: normal; }
       .card-top { padding: 18px 17px 14px; }
@@ -725,7 +794,6 @@
     }
 
     @media (max-width: 390px) {
-      .select-row { grid-template-columns: 1fr; }
       .card-top { grid-template-columns: 1fr; }
       .distance-box {
         display: flex;
@@ -740,11 +808,278 @@
       .card-actions .copy-action { display: none; }
     }
 
+
+
+    .filter-sheet-handle,
+    .filter-sheet-header {
+      display: none;
+    }
+
+    .filter-panel {
+      margin-bottom: 24px;
+      padding: 18px;
+      border: 1px solid rgba(220,229,223,.95);
+      border-radius: var(--radius-xl);
+      background: rgba(255,253,248,.94);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .filter-panel .filter-label {
+      margin-top: 0;
+    }
+
+    .filter-backdrop {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      body.filter-sheet-open {
+        overflow: hidden;
+      }
+
+      .toolbar {
+        top: max(6px, env(safe-area-inset-top));
+        z-index: 40;
+        margin-bottom: 14px;
+        padding: 8px;
+        border-radius: 17px;
+        box-shadow: 0 10px 28px rgba(21,57,42,.14);
+      }
+
+      .search-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+      }
+
+      .search-input {
+        min-height: 44px;
+        padding: 10px 12px 10px 41px;
+        border-radius: 12px;
+        font-size: 14px;
+      }
+
+      .search-wrap::before {
+        left: 13px;
+        font-size: 22px;
+      }
+
+      .desktop-reset {
+        display: none;
+      }
+
+      .filter-toggle {
+        display: inline-flex;
+        min-height: 44px;
+        padding: 9px 12px;
+        border-color: var(--forest-800);
+        border-radius: 12px;
+        background: var(--forest-800);
+        color: #fff;
+        box-shadow: 0 6px 15px rgba(23,73,54,.16);
+      }
+
+      .filter-toggle[data-active="true"] {
+        border-color: var(--forest-700);
+        background: var(--forest-700);
+      }
+
+      .filter-toggle-count {
+        background: var(--orange);
+      }
+
+      .filter-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: block;
+        background: rgba(6,25,18,.48);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .22s ease;
+      }
+
+      .filter-backdrop.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .filter-panel {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 90;
+        display: flex;
+        flex-direction: column;
+        max-height: min(82vh, 690px);
+        max-height: min(82dvh, 690px);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        border-radius: 25px 25px 0 0;
+        background: var(--paper);
+        box-shadow: 0 -18px 55px rgba(6,25,18,.24);
+        backdrop-filter: none;
+        transform: translateY(105%);
+        visibility: hidden;
+        transition: transform .24s ease, visibility 0s linear .24s;
+      }
+
+      .filter-panel.is-open {
+        transform: translateY(0);
+        visibility: visible;
+        transition: transform .24s ease, visibility 0s;
+      }
+
+      .filter-sheet-handle {
+        display: block;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 5px;
+        margin: 9px auto 2px;
+        border-radius: 999px;
+        background: #d1d9d4;
+      }
+
+      .filter-sheet-header {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 11px 18px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .filter-sheet-header strong {
+        display: block;
+        font-size: 20px;
+        letter-spacing: -.025em;
+      }
+
+      .filter-sheet-header span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .filter-close-button {
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        color: var(--ink);
+        font-size: 25px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .filter-sheet-content {
+        flex: 1 1 auto;
+        min-height: 0;
+        padding: 16px 18px 18px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+      }
+
+      .filter-panel .filter-label {
+        margin: 0 0 9px;
+      }
+
+      .filter-panel .category-chips {
+        flex-wrap: wrap;
+        overflow: visible;
+        padding-bottom: 2px;
+      }
+
+      .filter-panel .chip {
+        min-height: 36px;
+        padding: 7px 11px;
+      }
+
+      .filter-panel .select-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+        margin-top: 17px;
+      }
+
+      .filter-panel .field select,
+      .filter-panel .favorite-filter {
+        min-height: 44px;
+      }
+
+      .filter-panel .favorite-filter {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
+      .mobile-filter-actions {
+        position: static;
+        display: grid;
+        flex: 0 0 auto;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 9px;
+        margin: 0;
+        padding: 12px 18px max(12px, env(safe-area-inset-bottom));
+        border-top: 1px solid var(--line);
+        background: rgba(255,253,248,.98);
+      }
+
+      .mobile-filter-reset,
+      .mobile-filter-done {
+        min-height: 48px;
+        padding: 10px 16px;
+        border-radius: 13px;
+        font-size: 14px;
+        font-weight: 850;
+        cursor: pointer;
+      }
+
+      .mobile-filter-reset {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--forest-900);
+      }
+
+      .mobile-filter-done {
+        border: 1px solid var(--forest-800);
+        background: var(--forest-800);
+        color: #fff;
+      }
+
+      #resultHeading {
+        scroll-margin-top: 76px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .filter-toggle {
+        padding-inline: 10px;
+        font-size: 12px;
+      }
+
+      .filter-panel .select-row {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-panel .favorite-filter {
+        grid-column: auto;
+      }
+    }
+
     @media print {
       body { background: #fff; }
       .hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
       .hero-copy, .base-label { color: #333; }
-      .hero-btn, .toolbar, .card-actions, .toast { display: none !important; }
+      .hero-btn, .toolbar, .filter-panel, .filter-backdrop, .card-actions, .toast { display: none !important; }
       main { width: 100%; padding: 20px; }
       .notice, .card, .guide-panel { box-shadow: none; }
       .restaurant-grid { grid-template-columns: repeat(2, 1fr); }
@@ -795,10 +1130,10 @@
       </div>
     </section>
 
-    <section class="toolbar" aria-label="음식점 필터">
+    <section class="toolbar" aria-label="음식점 검색">
       <div class="search-row">
         <div class="search-wrap">
-          <label class="skip-link" for="searchInput">가게명 또는 메뉴 검색</label>
+          <label class="sr-only" for="searchInput">가게명 또는 메뉴 검색</label>
           <input
             id="searchInput"
             class="search-input"
@@ -808,44 +1143,79 @@
             placeholder="가게명·메뉴·주소 검색"
           >
         </div>
-        <button id="resetButton" class="reset-btn" type="button">필터 초기화</button>
+
+        <button
+          id="filterToggle"
+          class="filter-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="filterPanel"
+        >
+          <span>필터</span>
+          <span id="filterCount" class="filter-toggle-count" hidden>0</span>
+        </button>
+
+        <button id="resetButton" class="reset-btn desktop-reset" type="button">필터 초기화</button>
+      </div>
+    </section>
+
+    <div id="filterBackdrop" class="filter-backdrop" aria-hidden="true"></div>
+
+    <section id="filterPanel" class="filter-panel" aria-label="상세 필터" aria-hidden="false">
+      <div class="filter-sheet-handle" aria-hidden="true"></div>
+
+      <div class="filter-sheet-header">
+        <div>
+          <strong>필터·정렬</strong>
+          <span>조건을 선택하면 목록에 바로 반영됩니다.</span>
+        </div>
+        <button id="filterCloseButton" class="filter-close-button" type="button" aria-label="필터 닫기">×</button>
       </div>
 
-      <div class="filter-label">음식 카테고리</div>
-      <div id="categoryChips" class="category-chips" role="group" aria-label="음식 카테고리"></div>
+      <div class="filter-sheet-content">
+        <div class="filter-label">음식 카테고리</div>
+        <div id="categoryChips" class="category-chips" role="group" aria-label="음식 카테고리"></div>
 
-      <div class="select-row">
-        <div class="field">
-          <label for="serviceFilter">배달·포장 정보</label>
-          <select id="serviceFilter">
-            <option value="전체">전체</option>
-            <option value="takeout-confirmed">포장 확인</option>
-            <option value="delivery-call">배달권 전화 확인</option>
-            <option value="unknown">확인 필요</option>
-          </select>
+        <div class="select-row">
+          <div class="field">
+            <label for="serviceFilter">배달·포장 정보</label>
+            <select id="serviceFilter">
+              <option value="전체">전체</option>
+              <option value="takeout-confirmed">포장 확인</option>
+              <option value="delivery-call">배달권 전화 확인</option>
+              <option value="unknown">확인 필요</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="distanceFilter">거리 범위</label>
+            <select id="distanceFilter">
+              <option value="전체">전체 거리</option>
+              <option value="3">약 3km 이내</option>
+              <option value="6">약 6km 이내</option>
+              <option value="over6">약 6km 초과</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="sortSelect">정렬</label>
+            <select id="sortSelect">
+              <option value="distance">가까운 순</option>
+              <option value="name">가게명 순</option>
+              <option value="category">카테고리 순</option>
+            </select>
+          </div>
+
+          <button id="favoriteFilter" class="favorite-filter" type="button" aria-pressed="false">
+            ☆ 저장한 가게만
+          </button>
         </div>
+      </div>
 
-        <div class="field">
-          <label for="distanceFilter">거리 범위</label>
-          <select id="distanceFilter">
-            <option value="전체">전체 거리</option>
-            <option value="3">약 3km 이내</option>
-            <option value="6">약 6km 이내</option>
-            <option value="over6">약 6km 초과</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="sortSelect">정렬</label>
-          <select id="sortSelect">
-            <option value="distance">가까운 순</option>
-            <option value="name">가게명 순</option>
-            <option value="category">카테고리 순</option>
-          </select>
-        </div>
-
-        <button id="favoriteFilter" class="favorite-filter" type="button" aria-pressed="false">
-          ☆ 저장한 가게만
+      <div class="mobile-filter-actions">
+        <button id="mobileResetButton" class="mobile-filter-reset" type="button">초기화</button>
+        <button id="filterDoneButton" class="mobile-filter-done" type="button">
+          결과 <span id="filterDoneCount">0</span>곳 보기
         </button>
       </div>
     </section>
@@ -1313,6 +1683,14 @@
     const elements = {
       search: document.getElementById("searchInput"),
       reset: document.getElementById("resetButton"),
+      mobileReset: document.getElementById("mobileResetButton"),
+      filterToggle: document.getElementById("filterToggle"),
+      filterPanel: document.getElementById("filterPanel"),
+      filterBackdrop: document.getElementById("filterBackdrop"),
+      filterClose: document.getElementById("filterCloseButton"),
+      filterCount: document.getElementById("filterCount"),
+      filterDone: document.getElementById("filterDoneButton"),
+      filterDoneCount: document.getElementById("filterDoneCount"),
       chips: document.getElementById("categoryChips"),
       service: document.getElementById("serviceFilter"),
       distance: document.getElementById("distanceFilter"),
@@ -1325,6 +1703,8 @@
 
     let favorites = loadFavorites();
     let toastTimer = null;
+    let mobileFiltersOpen = false;
+    const mobileViewport = window.matchMedia("(max-width: 640px)");
 
     function loadFavorites() {
       try {
@@ -1341,6 +1721,66 @@
       } catch {
         // local file or privacy mode may block localStorage; the page remains usable.
       }
+    }
+
+    function getActiveFilterCount() {
+      return [
+        state.category !== "전체",
+        state.service !== "전체",
+        state.distance !== "전체",
+        state.sort !== "distance",
+        state.favoritesOnly
+      ].filter(Boolean).length;
+    }
+
+    function syncFilterLayout() {
+      const isMobile = mobileViewport.matches;
+
+      if (isMobile) {
+        elements.filterPanel.classList.toggle("is-open", mobileFiltersOpen);
+        elements.filterBackdrop.classList.toggle("is-visible", mobileFiltersOpen);
+        elements.filterPanel.setAttribute("aria-hidden", String(!mobileFiltersOpen));
+        elements.filterPanel.setAttribute("role", "dialog");
+        elements.filterPanel.setAttribute("aria-modal", "true");
+        elements.filterBackdrop.setAttribute("aria-hidden", String(!mobileFiltersOpen));
+        elements.filterToggle.setAttribute("aria-expanded", String(mobileFiltersOpen));
+        document.body.classList.toggle("filter-sheet-open", mobileFiltersOpen);
+      } else {
+        mobileFiltersOpen = false;
+        elements.filterPanel.classList.remove("is-open");
+        elements.filterBackdrop.classList.remove("is-visible");
+        elements.filterPanel.setAttribute("aria-hidden", "false");
+        elements.filterPanel.removeAttribute("role");
+        elements.filterPanel.removeAttribute("aria-modal");
+        elements.filterBackdrop.setAttribute("aria-hidden", "true");
+        elements.filterToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("filter-sheet-open");
+      }
+    }
+
+    function setMobileFiltersOpen(open, returnFocus = false) {
+      mobileFiltersOpen = Boolean(open) && mobileViewport.matches;
+      syncFilterLayout();
+
+      if (mobileFiltersOpen) {
+        window.setTimeout(() => elements.filterClose.focus(), 0);
+      } else if (returnFocus && mobileViewport.matches) {
+        elements.filterToggle.focus();
+      }
+    }
+
+    function updateFilterStatus(resultCount) {
+      const activeCount = getActiveFilterCount();
+      elements.filterCount.textContent = String(activeCount);
+      elements.filterCount.hidden = activeCount === 0;
+      elements.filterToggle.dataset.active = String(activeCount > 0);
+      elements.filterToggle.setAttribute(
+        "aria-label",
+        activeCount > 0
+          ? `필터·정렬, ${activeCount}개 조건 적용됨`
+          : "필터·정렬 열기"
+      );
+      elements.filterDoneCount.textContent = String(resultCount);
     }
 
     function normalize(value) {
@@ -1526,6 +1966,7 @@
       const restaurants = getFilteredRestaurants();
 
       elements.meta.textContent = `총 ${RESTAURANTS.length}곳 중 ${restaurants.length}곳 표시 · 거리는 약식 추정값`;
+      updateFilterStatus(restaurants.length);
       elements.favoriteFilter.setAttribute("aria-pressed", String(state.favoritesOnly));
       elements.favoriteFilter.textContent = state.favoritesOnly ? "★ 저장한 가게만" : "☆ 저장한 가게만";
 
@@ -1631,10 +2072,71 @@
       renderRestaurants();
     });
 
+    elements.filterToggle.addEventListener("click", () => {
+      setMobileFiltersOpen(true);
+    });
+
+    elements.filterClose.addEventListener("click", () => {
+      setMobileFiltersOpen(false, true);
+    });
+
+    elements.filterBackdrop.addEventListener("click", () => {
+      setMobileFiltersOpen(false, true);
+    });
+
+    elements.filterDone.addEventListener("click", () => {
+      setMobileFiltersOpen(false);
+      document.getElementById("resultHeading").scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start"
+      });
+    });
+
     elements.reset.addEventListener("click", resetFilters);
+    elements.mobileReset.addEventListener("click", resetFilters);
+
+    document.addEventListener("keydown", (event) => {
+      if (!mobileViewport.matches || !mobileFiltersOpen) return;
+
+      if (event.key === "Escape") {
+        setMobileFiltersOpen(false, true);
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = [...elements.filterPanel.querySelectorAll(
+        'button:not([disabled]), select:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+      )].filter((element) => element.offsetParent !== null);
+
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    const handleViewportChange = () => {
+      mobileFiltersOpen = false;
+      syncFilterLayout();
+    };
+
+    if (typeof mobileViewport.addEventListener === "function") {
+      mobileViewport.addEventListener("change", handleViewportChange);
+    } else if (typeof mobileViewport.addListener === "function") {
+      mobileViewport.addListener(handleViewportChange);
+    }
 
     renderCategoryChips();
     renderRestaurants();
+    syncFilterLayout();
   </script>
 </body>
 </html>
