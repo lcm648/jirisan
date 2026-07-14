@@ -1,0 +1,1640 @@
+\
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#174936">
+  <meta name="description" content="경남 함양군 안의면 황대길 90-1 기준 음식점 가이드">
+  <title>안의면 음식점 가이드 · 황대길 90-1 기준</title>
+  <style>
+    :root {
+      --forest-950: #0c2b20;
+      --forest-900: #123a2b;
+      --forest-800: #174936;
+      --forest-700: #1e5f46;
+      --forest-100: #e9f4ee;
+      --forest-050: #f4f9f6;
+      --cream: #fbf7ee;
+      --paper: #fffdf8;
+      --ink: #17211c;
+      --muted: #66736d;
+      --line: #dce5df;
+      --orange: #de6e32;
+      --orange-soft: #fff0e6;
+      --blue-soft: #eaf3ff;
+      --blue: #255f9e;
+      --yellow-soft: #fff8da;
+      --yellow: #7d6413;
+      --red-soft: #ffefef;
+      --red: #a23d3d;
+      --shadow: 0 18px 55px rgba(21, 57, 42, .11);
+      --shadow-soft: 0 8px 24px rgba(21, 57, 42, .08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 7% 0%, rgba(222, 110, 50, .12), transparent 28rem),
+        linear-gradient(180deg, #f4f8f5 0, var(--cream) 32rem, #f6f2e9 100%);
+      color: var(--ink);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 999;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff;
+      color: #111;
+      transform: translateY(-160%);
+      transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(125deg, rgba(12, 43, 32, .98), rgba(30, 95, 70, .93)),
+        var(--forest-900);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%;
+    }
+    .hero::before {
+      width: 520px;
+      height: 520px;
+      right: -170px;
+      top: -250px;
+      box-shadow:
+        0 0 0 38px rgba(255,255,255,.025),
+        0 0 0 85px rgba(255,255,255,.018),
+        0 0 0 142px rgba(255,255,255,.014);
+    }
+    .hero::after {
+      width: 300px;
+      height: 300px;
+      left: -170px;
+      bottom: -210px;
+      box-shadow: 0 0 0 48px rgba(255,255,255,.022);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0 46px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 7px 11px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,.09);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.79);
+      font-size: clamp(15px, 2vw, 18px);
+    }
+
+    .base-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      margin-top: 30px;
+      padding: 19px 20px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px;
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(10px);
+    }
+
+    .base-label {
+      margin-bottom: 3px;
+      color: rgba(255,255,255,.63);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .base-address {
+      font-size: 17px;
+      font-weight: 800;
+      word-break: keep-all;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--forest-900);
+      font-size: 14px;
+      font-weight: 850;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .hero-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.16); }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding: 18px 19px;
+      border: 1px solid #e7d8b4;
+      border-radius: var(--radius-lg);
+      background: #fffbec;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .notice-icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #f5e5a7;
+      font-size: 18px;
+    }
+
+    .notice strong { display: block; margin-bottom: 4px; }
+    .notice p { margin: 0; color: #665d43; font-size: 14px; }
+    .notice p + p { margin-top: 5px; }
+
+    .toolbar {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      margin-bottom: 24px;
+      padding: 18px;
+      border: 1px solid rgba(220,229,223,.95);
+      border-radius: var(--radius-xl);
+      background: rgba(255,253,248,.94);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) auto;
+      gap: 12px;
+    }
+
+    .search-wrap {
+      position: relative;
+    }
+
+    .search-wrap::before {
+      content: "⌕";
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      color: var(--muted);
+      font-size: 24px;
+      transform: translateY(-54%) rotate(-15deg);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 15px 12px 45px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--forest-700);
+      box-shadow: 0 0 0 4px rgba(30,95,70,.11);
+    }
+
+    .reset-btn {
+      min-height: 48px;
+      padding: 10px 17px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--forest-900);
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .reset-btn:hover { background: var(--forest-050); }
+
+    .filter-label {
+      margin: 16px 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .05em;
+    }
+
+    .category-chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 1px 1px 7px;
+      scrollbar-width: thin;
+    }
+
+    .chip {
+      flex: 0 0 auto;
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #46524c;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all .17s ease;
+    }
+
+    .chip:hover { border-color: #abc5b7; background: var(--forest-050); }
+    .chip[aria-pressed="true"] {
+      border-color: var(--forest-800);
+      background: var(--forest-800);
+      color: #fff;
+      box-shadow: 0 6px 15px rgba(23,73,54,.18);
+    }
+
+    .select-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: end;
+    }
+
+    .field label {
+      display: block;
+      margin: 0 0 6px 2px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .field select {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 34px 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .favorite-filter {
+      min-height: 42px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: #4b554f;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .favorite-filter[aria-pressed="true"] {
+      border-color: #e5b846;
+      background: var(--yellow-soft);
+      color: var(--yellow);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: flex-end;
+      margin: 0 2px 14px;
+    }
+
+    .result-title {
+      margin: 0;
+      font-size: clamp(23px, 3vw, 31px);
+      letter-spacing: -.035em;
+    }
+
+    .result-meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .checked-at {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #c9d8d0;
+      box-shadow: 0 16px 42px rgba(21,57,42,.13);
+    }
+
+    .card-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      padding: 21px 21px 16px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: -.01em;
+    }
+
+    .badge-category { background: var(--forest-100); color: var(--forest-800); }
+    .badge-high { background: var(--blue-soft); color: var(--blue); }
+    .badge-medium { background: var(--yellow-soft); color: var(--yellow); }
+    .badge-low { background: var(--red-soft); color: var(--red); }
+
+    .restaurant-name {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.25;
+      letter-spacing: -.035em;
+      word-break: keep-all;
+    }
+
+    .restaurant-note {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .distance-box {
+      min-width: 86px;
+      padding: 11px 10px;
+      border-radius: 16px;
+      background: var(--orange-soft);
+      color: #8a3d18;
+      text-align: center;
+      align-self: start;
+    }
+
+    .distance-box small {
+      display: block;
+      margin-bottom: 1px;
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .04em;
+    }
+
+    .distance-box strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -.045em;
+    }
+
+    .distance-box span {
+      display: block;
+      margin-top: 3px;
+      font-size: 10px;
+      font-weight: 750;
+      opacity: .78;
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 13px;
+      padding: 0 21px 20px;
+    }
+
+    .menu-box {
+      padding: 13px 14px;
+      border: 1px solid #efe7d6;
+      border-radius: 15px;
+      background: #fffcf4;
+    }
+
+    .row-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .045em;
+    }
+
+    .menu-list {
+      font-size: 14px;
+      font-weight: 800;
+      word-break: keep-all;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      font-size: 13px;
+    }
+
+    .info-row dt {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .info-row dd {
+      margin: 0;
+      min-width: 0;
+      color: #313a35;
+      word-break: keep-all;
+    }
+
+    .service-takeout { color: var(--forest-700) !important; font-weight: 850; }
+    .service-call { color: #9a551c !important; font-weight: 850; }
+    .service-unknown { color: #7b4c4c !important; font-weight: 800; }
+
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .feature {
+      padding: 5px 8px;
+      border-radius: 8px;
+      background: #f0f2f0;
+      color: #5d6962;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto auto;
+      gap: 8px;
+      padding: 14px 16px 16px;
+      border-top: 1px solid var(--line);
+      background: #fafbf9;
+    }
+
+    .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 43px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: #37433d;
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .17s ease, border-color .17s ease, transform .17s ease;
+    }
+
+    .action:hover { transform: translateY(-1px); border-color: #b9ccc1; background: var(--forest-050); }
+    .action-primary {
+      border-color: var(--forest-800);
+      background: var(--forest-800);
+      color: #fff;
+    }
+    .action-primary:hover { background: var(--forest-700); border-color: var(--forest-700); }
+    .action:disabled { cursor: not-allowed; opacity: .43; transform: none; }
+
+    .favorite-btn {
+      width: 43px;
+      padding: 0;
+      font-size: 18px;
+    }
+    .favorite-btn[aria-pressed="true"] {
+      border-color: #e7bf55;
+      background: var(--yellow-soft);
+      color: #8a6812;
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 54px 20px;
+      border: 1px dashed #becdc5;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.58);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .empty strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 19px;
+    }
+
+    .guide-panel {
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .guide-panel details + details { border-top: 1px solid var(--line); }
+    .guide-panel summary {
+      position: relative;
+      padding: 18px 48px 18px 20px;
+      font-weight: 850;
+      cursor: pointer;
+      list-style: none;
+    }
+    .guide-panel summary::-webkit-details-marker { display: none; }
+    .guide-panel summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      color: var(--forest-700);
+      font-size: 22px;
+      transform: translateY(-50%);
+    }
+    .guide-panel details[open] summary::after { content: "−"; }
+    .guide-content {
+      padding: 0 20px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .guide-content p { margin: 0 0 10px; }
+    .guide-content p:last-child { margin-bottom: 0; }
+    .guide-content ul { margin: 6px 0 0; padding-left: 20px; }
+
+    footer {
+      padding: 34px 20px 48px;
+      color: #78837d;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: max(24px, env(safe-area-inset-bottom));
+      z-index: 100;
+      max-width: min(440px, calc(100% - 32px));
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(12,43,32,.95);
+      color: #fff;
+      box-shadow: 0 12px 34px rgba(0,0,0,.24);
+      font-size: 13px;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 14px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (max-width: 860px) {
+      .restaurant-grid { grid-template-columns: 1fr; }
+      .select-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .favorite-filter { width: 100%; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-inner, main { width: min(100% - 24px, var(--max)); }
+      .hero-inner { padding: 37px 0 32px; }
+      h1 { font-size: 38px; }
+      .base-card { grid-template-columns: 1fr; }
+      .hero-btn { width: 100%; }
+      main { padding-top: 17px; }
+      .toolbar { top: 6px; padding: 13px; border-radius: 20px; }
+      .search-row { grid-template-columns: 1fr; }
+      .reset-btn { min-height: 42px; }
+      .select-row { grid-template-columns: 1fr 1fr; }
+      .summary-row { align-items: flex-start; flex-direction: column; }
+      .checked-at { white-space: normal; }
+      .card-top { padding: 18px 17px 14px; }
+      .card-body { padding: 0 17px 17px; }
+      .restaurant-name { font-size: 21px; }
+      .card-actions { grid-template-columns: minmax(0, 1fr) auto auto auto; padding: 12px; }
+      .action { padding-inline: 9px; }
+      .notice { padding: 15px; }
+    }
+
+    @media (max-width: 390px) {
+      .select-row { grid-template-columns: 1fr; }
+      .card-top { grid-template-columns: 1fr; }
+      .distance-box {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        width: fit-content;
+        min-width: 0;
+      }
+      .distance-box small, .distance-box strong, .distance-box span { display: inline; }
+      .info-row { grid-template-columns: 66px minmax(0, 1fr); }
+      .card-actions { grid-template-columns: minmax(0, 1fr) auto auto; }
+      .card-actions .copy-action { display: none; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero-copy, .base-label { color: #333; }
+      .hero-btn, .toolbar, .card-actions, .toast { display: none !important; }
+      main { width: 100%; padding: 20px; }
+      .notice, .card, .guide-panel { box-shadow: none; }
+      .restaurant-grid { grid-template-columns: repeat(2, 1fr); }
+      .card { break-inside: avoid; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#restaurantList">음식점 목록으로 이동</a>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">📍 함양군 안의면 · 여행용 모바일 가이드</div>
+      <h1>안의면<br>음식점 가이드</h1>
+      <p class="hero-copy">
+        숙소를 기준으로 가까운 식당부터 찾고, 음식 종류와 포장·배달 확인 상태를 한 번에 비교할 수 있습니다.
+      </p>
+
+      <div class="base-card">
+        <div>
+          <div class="base-label">거리 기준 주소</div>
+          <div class="base-address">경남 함양군 안의면 황대길 90-1</div>
+        </div>
+        <a
+          class="hero-btn"
+          href="https://map.naver.com/p/search/%EA%B2%BD%EB%82%A8%20%ED%95%A8%EC%96%91%EA%B5%B0%20%EC%95%88%EC%9D%98%EB%A9%B4%20%ED%99%A9%EB%8C%80%EA%B8%B8%2090-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >네이버 지도에서 기준지 열기 ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="notice" aria-label="중요 안내">
+      <div class="notice-icon" aria-hidden="true">!</div>
+      <div>
+        <strong>거리와 배달 정보는 출발 전에 한 번 더 확인하세요.</strong>
+        <p>표시 거리는 실시간 차량 길찾기가 아니라 공개 위치·거리 자료를 조합한 <b>약식 추정값</b>입니다. 산지 도로 특성상 실제 차량 이동거리는 더 길 수 있습니다.</p>
+        <p>배달은 매장 운영시간·최소 주문금액·당일 배달 반경에 따라 달라집니다. ‘포장 가능’과 ‘황대길까지 배달 가능’을 동일하게 보지 않았습니다.</p>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="음식점 필터">
+      <div class="search-row">
+        <div class="search-wrap">
+          <label class="skip-link" for="searchInput">가게명 또는 메뉴 검색</label>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="search"
+            inputmode="search"
+            autocomplete="off"
+            placeholder="가게명·메뉴·주소 검색"
+          >
+        </div>
+        <button id="resetButton" class="reset-btn" type="button">필터 초기화</button>
+      </div>
+
+      <div class="filter-label">음식 카테고리</div>
+      <div id="categoryChips" class="category-chips" role="group" aria-label="음식 카테고리"></div>
+
+      <div class="select-row">
+        <div class="field">
+          <label for="serviceFilter">배달·포장 정보</label>
+          <select id="serviceFilter">
+            <option value="전체">전체</option>
+            <option value="takeout-confirmed">포장 확인</option>
+            <option value="delivery-call">배달권 전화 확인</option>
+            <option value="unknown">확인 필요</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="distanceFilter">거리 범위</label>
+          <select id="distanceFilter">
+            <option value="전체">전체 거리</option>
+            <option value="3">약 3km 이내</option>
+            <option value="6">약 6km 이내</option>
+            <option value="over6">약 6km 초과</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="sortSelect">정렬</label>
+          <select id="sortSelect">
+            <option value="distance">가까운 순</option>
+            <option value="name">가게명 순</option>
+            <option value="category">카테고리 순</option>
+          </select>
+        </div>
+
+        <button id="favoriteFilter" class="favorite-filter" type="button" aria-pressed="false">
+          ☆ 저장한 가게만
+        </button>
+      </div>
+    </section>
+
+    <section aria-labelledby="resultHeading">
+      <div class="summary-row">
+        <div>
+          <h2 id="resultHeading" class="result-title">음식점 목록</h2>
+          <div id="resultMeta" class="result-meta" aria-live="polite"></div>
+        </div>
+        <div class="checked-at">공개정보 검토일 · 2026.07.14</div>
+      </div>
+
+      <div id="restaurantList" class="restaurant-grid"></div>
+    </section>
+
+    <section class="guide-panel" aria-label="이용 안내">
+      <details>
+        <summary>거리값은 어떻게 산정했나요?</summary>
+        <div class="guide-content">
+          <p>
+            기준 주소 주변 정류장·관광지·음식점 간 공개 거리 자료를 교차해 위치 관계를 잡고,
+            음식점별 참고 거리를 약식으로 정리했습니다. 모든 음식점의 동일한 좌표·도로 경로 API 결과를
+            확보한 값은 아니므로 <b>‘약 N km’는 후보 비교용</b>으로만 사용하세요.
+          </p>
+          <p>실제 운전거리와 예상시간은 각 카드의 <b>네이버 지도</b> 버튼을 누른 뒤 길찾기에서 확인하는 것이 정확합니다.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>배달 표시를 어떻게 읽어야 하나요?</summary>
+        <div class="guide-content">
+          <ul>
+            <li><b>포장 가능</b>: 공개 정보에서 포장 가능 표기를 확인한 경우입니다.</li>
+            <li><b>배달권 전화 확인</b>: 배달형 업종이거나 관련 표기가 있으나 황대길 90-1까지 가능한지는 확정하지 않은 경우입니다.</li>
+            <li><b>확인 필요</b>: 배달·포장 정보를 신뢰할 수준으로 확인하지 못한 경우입니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>정보 신뢰도 배지는 무엇인가요?</summary>
+        <div class="guide-content">
+          <p><b>정보 비교 확인</b>은 비교적 최근의 공개 자료에서 핵심 정보를 교차 확인한 가게입니다.</p>
+          <p><b>방문 전 재확인</b>은 상호·주소·메뉴 등은 확인되지만 영업시간, 휴무, 서비스 범위 중 일부가 불명확한 가게입니다.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    이 페이지는 여행 준비용 참고자료입니다. 가격·메뉴·영업시간·휴무·배달 가능 여부는 매장 사정에 따라 변경될 수 있습니다.
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    "use strict";
+
+    const BASE_ADDRESS = "경남 함양군 안의면 황대길 90-1";
+    const RESTAURANTS = [
+  {
+    "id": "namuhyanggi",
+    "name": "나무향기",
+    "category": "갈비·고기",
+    "menus": [
+      "지리산 흑돼지",
+      "소갈비찜",
+      "오리불고기",
+      "닭백숙"
+    ],
+    "distanceKm": 1.8,
+    "address": "경남 함양군 안의면 농월정길 9-17",
+    "phone": "0507-1341-4369",
+    "hours": "08:00–22:00 · 연중무휴 표기",
+    "serviceType": "unknown",
+    "serviceText": "배달·포장 여부 확인 필요",
+    "features": [
+      "주차",
+      "단체",
+      "예약 권장"
+    ],
+    "confidence": "high",
+    "note": "흑돼지·갈비·백숙을 함께 고르기 좋은 식당입니다."
+  },
+  {
+    "id": "nongwol-chogyetang",
+    "name": "농월초계탕막국수",
+    "category": "한식",
+    "menus": [
+      "초계탕",
+      "물막국수",
+      "비빔막국수",
+      "닭무침"
+    ],
+    "distanceKm": 1.8,
+    "address": "경남 함양군 안의면 육십령로 3102",
+    "phone": "055-962-4945",
+    "hours": "11:00–19:00 표기 · 방문 전 확인",
+    "serviceType": "takeout-confirmed",
+    "serviceText": "포장 가능 · 배달권은 전화 확인",
+    "features": [
+      "포장",
+      "예약",
+      "유아의자"
+    ],
+    "confidence": "high",
+    "note": "여름철 계곡 일정과 함께 이용하기 좋은 초계탕·막국수 전문점입니다."
+  },
+  {
+    "id": "dongwon-garden",
+    "name": "동원가든",
+    "category": "백숙·계곡식",
+    "menus": [
+      "토종닭백숙",
+      "오리백숙",
+      "닭볶음탕"
+    ],
+    "distanceKm": 1.9,
+    "address": "경남 함양군 안의면 육십령로 3077",
+    "phone": "055-962-4400",
+    "hours": "08:00–22:00 · 연중무휴 표기",
+    "serviceType": "unknown",
+    "serviceText": "배달·포장 여부 확인 필요",
+    "features": [
+      "주차",
+      "예약 권장",
+      "백숙"
+    ],
+    "confidence": "high",
+    "note": "백숙류는 조리 시간이 길 수 있어 출발 전에 예약하는 편이 안전합니다."
+  },
+  {
+    "id": "old-geumho",
+    "name": "옛날금호식당",
+    "category": "갈비·고기",
+    "menus": [
+      "안의갈비탕",
+      "안의갈비찜"
+    ],
+    "distanceKm": 2.4,
+    "address": "경남 함양군 안의면 광풍로 107",
+    "phone": "055-964-8041",
+    "hours": "11:00–16:00 · 월요일 휴무 표기",
+    "serviceType": "takeout-confirmed",
+    "serviceText": "포장 가능 · 배달권은 전화 확인",
+    "features": [
+      "포장",
+      "주차 제한",
+      "점심 추천"
+    ],
+    "confidence": "high",
+    "note": "영업 종료 시간이 이른 편이므로 늦은 점심에는 사전 확인이 필요합니다."
+  },
+  {
+    "id": "anui-original-galbi",
+    "name": "안의원조갈비집",
+    "category": "갈비·고기",
+    "menus": [
+      "갈비찜",
+      "갈비탕"
+    ],
+    "distanceKm": 2.5,
+    "address": "경남 함양군 안의면 광풍로 127-2",
+    "phone": "0507-1410-0668",
+    "hours": "10:30–20:00 표기 · 월요일 휴무 정보 상이",
+    "serviceType": "takeout-confirmed",
+    "serviceText": "포장 가능 · 배달권은 전화 확인",
+    "features": [
+      "포장",
+      "갈비",
+      "휴무 재확인"
+    ],
+    "confidence": "high",
+    "note": "공개 자료마다 월요일 휴무 방식이 달라 방문 당일 확인을 권장합니다."
+  },
+  {
+    "id": "anui-jin-galbitang",
+    "name": "안의진갈비탕",
+    "category": "갈비·고기",
+    "menus": [
+      "갈비탕",
+      "갈비찜"
+    ],
+    "distanceKm": 2.5,
+    "address": "경남 함양군 안의면 강변로 291-1",
+    "phone": "055-963-4400",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "delivery-call",
+    "serviceText": "포장·배달 가능 범위 전화 확인",
+    "features": [
+      "갈비",
+      "전화 확인 권장"
+    ],
+    "confidence": "medium",
+    "note": "최근 영업시간과 황대길까지의 서비스 범위는 전화 확인이 필요합니다."
+  },
+  {
+    "id": "samil-restaurant",
+    "name": "삼일식당",
+    "category": "갈비·고기",
+    "menus": [
+      "갈비탕",
+      "갈비찜"
+    ],
+    "distanceKm": 2.6,
+    "address": "경남 함양군 안의면 광풍로 141",
+    "phone": "",
+    "hours": "전화번호·영업시간 확인 필요",
+    "serviceType": "unknown",
+    "serviceText": "배달·포장 여부 확인 필요",
+    "features": [
+      "갈비",
+      "현장 정보 확인"
+    ],
+    "confidence": "medium",
+    "note": "상호와 메뉴 정보는 확인되지만 최신 연락처와 영업시간 확인이 필요합니다."
+  },
+  {
+    "id": "jinjjalu",
+    "name": "진짜루",
+    "category": "중식",
+    "menus": [
+      "짜장면",
+      "짬뽕",
+      "냉짬뽕"
+    ],
+    "distanceKm": 2.6,
+    "address": "경남 함양군 안의면 약초시장길 25-15",
+    "phone": "055-964-2124",
+    "hours": "평일 10:30–17:00 표기 · 방문 전 확인",
+    "serviceType": "delivery-call",
+    "serviceText": "배달·포장 및 황대길 배달권 전화 확인",
+    "features": [
+      "중식",
+      "영업시간 재확인"
+    ],
+    "confidence": "medium",
+    "note": "온라인 영업시간 표기가 제한적이므로 주문 전에 전화 확인이 안전합니다."
+  },
+  {
+    "id": "hayoon",
+    "name": "하윤식당",
+    "category": "한식",
+    "menus": [
+      "10가지 버섯전골",
+      "능이버섯전골",
+      "백반"
+    ],
+    "distanceKm": 2.6,
+    "address": "경남 함양군 안의면 당본길 10-5",
+    "phone": "055-962-1911",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "unknown",
+    "serviceText": "배달·포장 여부 확인 필요",
+    "features": [
+      "버섯전골",
+      "백반",
+      "전화 확인 권장"
+    ],
+    "confidence": "medium",
+    "note": "여럿이 전골 메뉴를 주문할 때 적합하며 영업 여부를 먼저 확인하는 편이 좋습니다."
+  },
+  {
+    "id": "cheogajip",
+    "name": "처갓집양념치킨 안의점",
+    "category": "치킨·피자",
+    "menus": [
+      "양념치킨",
+      "후라이드치킨"
+    ],
+    "distanceKm": 2.6,
+    "address": "경남 함양군 안의면 광풍로 132",
+    "phone": "055-962-0185",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "delivery-call",
+    "serviceText": "황대길 90-1 배달 가능 여부 전화 확인",
+    "features": [
+      "치킨",
+      "배달권 확인"
+    ],
+    "confidence": "medium",
+    "note": "배달 반경·최소 주문금액·주문 가능 시간은 매장에 확인해야 합니다."
+  },
+  {
+    "id": "bhc-anui",
+    "name": "BHC 함양안의점",
+    "category": "치킨·피자",
+    "menus": [
+      "후라이드치킨",
+      "양념치킨"
+    ],
+    "distanceKm": 2.7,
+    "address": "경남 함양군 안의면 광풍로 155-1",
+    "phone": "055-963-7888",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "delivery-call",
+    "serviceText": "황대길 90-1 배달 가능 여부 전화 확인",
+    "features": [
+      "치킨",
+      "배달권 확인"
+    ],
+    "confidence": "medium",
+    "note": "체인점이라도 숙소까지의 배달 가능 여부는 거리·시간대에 따라 달라질 수 있습니다."
+  },
+  {
+    "id": "imsil-pizza-chicken",
+    "name": "임실치즈피자 N 치킨",
+    "category": "치킨·피자",
+    "menus": [
+      "치즈피자",
+      "치킨"
+    ],
+    "distanceKm": 2.7,
+    "address": "경남 함양군 안의면 읍삼동길 6",
+    "phone": "055-962-7447",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "delivery-call",
+    "serviceText": "황대길 90-1 배달 가능 여부 전화 확인",
+    "features": [
+      "피자",
+      "치킨",
+      "배달권 확인"
+    ],
+    "confidence": "medium",
+    "note": "피자와 치킨을 함께 주문할 때 후보가 될 수 있으나 최신 운영정보 확인이 필요합니다."
+  },
+  {
+    "id": "pelicana-anui",
+    "name": "페리카나치킨 안의점",
+    "category": "치킨·피자",
+    "menus": [
+      "양념치킨",
+      "후라이드치킨"
+    ],
+    "distanceKm": 2.7,
+    "address": "경남 함양군 안의면 강변로 321",
+    "phone": "055-964-1106",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "delivery-call",
+    "serviceText": "황대길 90-1 배달 가능 여부 전화 확인",
+    "features": [
+      "치킨",
+      "배달권 확인"
+    ],
+    "confidence": "medium",
+    "note": "운영 여부와 배달 반경은 방문일 기준으로 재확인해야 합니다."
+  },
+  {
+    "id": "ttobongi-anui",
+    "name": "또봉이통닭 안의점",
+    "category": "치킨·피자",
+    "menus": [
+      "옛날통닭",
+      "치킨"
+    ],
+    "distanceKm": 2.8,
+    "address": "경남 함양군 안의면 석천길 11-7",
+    "phone": "055-962-8807",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "delivery-call",
+    "serviceText": "황대길 90-1 배달 가능 여부 전화 확인",
+    "features": [
+      "옛날통닭",
+      "배달권 확인"
+    ],
+    "confidence": "medium",
+    "note": "포장 또는 배달 주문 전에 현재 운영시간과 배달 범위를 확인하세요."
+  },
+  {
+    "id": "baraegi-hanwoo",
+    "name": "바래기암소한마리",
+    "category": "갈비·고기",
+    "menus": [
+      "한우",
+      "특수부위"
+    ],
+    "distanceKm": 5.0,
+    "address": "경남 함양군 안의면 거안로 395",
+    "phone": "",
+    "hours": "11:00–21:00 · 화요일 휴무 표기",
+    "serviceType": "unknown",
+    "serviceText": "배달·포장 여부 확인 필요",
+    "features": [
+      "한우",
+      "넓은 주차",
+      "차량 이동"
+    ],
+    "confidence": "medium",
+    "note": "숙소 인근보다는 차량 이동형 식사 후보이며 휴무일을 확인하는 편이 좋습니다."
+  },
+  {
+    "id": "songrim",
+    "name": "송림회관",
+    "category": "백숙·계곡식",
+    "menus": [
+      "오골계백숙",
+      "오리백숙",
+      "토종닭백숙",
+      "더덕구이"
+    ],
+    "distanceKm": 5.7,
+    "address": "경남 함양군 안의면 용추계곡로 410",
+    "phone": "055-963-0929",
+    "hours": "현재 영업시간 확인 필요",
+    "serviceType": "unknown",
+    "serviceText": "배달·포장 여부 확인 필요",
+    "features": [
+      "주차",
+      "예약",
+      "야외석",
+      "계곡권"
+    ],
+    "confidence": "high",
+    "note": "용추계곡 이동 일정에 붙이기 좋은 식당이며 백숙류는 사전 예약을 권장합니다."
+  },
+  {
+    "id": "cheongung",
+    "name": "천궁산장식당",
+    "category": "백숙·계곡식",
+    "menus": [
+      "한방닭백숙",
+      "한방오리백숙",
+      "옻닭",
+      "옻오리"
+    ],
+    "distanceKm": 6.5,
+    "address": "경남 함양군 안의면 용추계곡로 519",
+    "phone": "055-963-3399",
+    "hours": "11:30–21:00 · 연중무휴 표기",
+    "serviceType": "takeout-confirmed",
+    "serviceText": "포장 가능 · 배달권은 전화 확인",
+    "features": [
+      "포장",
+      "주차",
+      "예약",
+      "계곡권"
+    ],
+    "confidence": "high",
+    "note": "용추계곡 상류 일정과 결합하기 좋고, 옻 메뉴는 알레르기·체질을 사전에 확인해야 합니다."
+  }
+];
+
+    const CATEGORY_ORDER = ["전체", "갈비·고기", "백숙·계곡식", "한식", "중식", "치킨·피자"];
+    const CONFIDENCE_LABEL = {
+      high: "정보 비교 확인",
+      medium: "방문 전 재확인",
+      low: "운영 여부 확인"
+    };
+    const SERVICE_CLASS = {
+      "takeout-confirmed": "service-takeout",
+      "delivery-call": "service-call",
+      "unknown": "service-unknown"
+    };
+
+    const state = {
+      query: "",
+      category: "전체",
+      service: "전체",
+      distance: "전체",
+      sort: "distance",
+      favoritesOnly: false
+    };
+
+    const elements = {
+      search: document.getElementById("searchInput"),
+      reset: document.getElementById("resetButton"),
+      chips: document.getElementById("categoryChips"),
+      service: document.getElementById("serviceFilter"),
+      distance: document.getElementById("distanceFilter"),
+      sort: document.getElementById("sortSelect"),
+      favoriteFilter: document.getElementById("favoriteFilter"),
+      list: document.getElementById("restaurantList"),
+      meta: document.getElementById("resultMeta"),
+      toast: document.getElementById("toast")
+    };
+
+    let favorites = loadFavorites();
+    let toastTimer = null;
+
+    function loadFavorites() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem("anuiRestaurantFavorites") || "[]");
+        return new Set(Array.isArray(parsed) ? parsed : []);
+      } catch {
+        return new Set();
+      }
+    }
+
+    function saveFavorites() {
+      try {
+        localStorage.setItem("anuiRestaurantFavorites", JSON.stringify([...favorites]));
+      } catch {
+        // local file or privacy mode may block localStorage; the page remains usable.
+      }
+    }
+
+    function normalize(value) {
+      return String(value ?? "").toLocaleLowerCase("ko-KR").replace(/\s+/g, "");
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function naverMapUrl(restaurant) {
+      const query = `${restaurant.name} ${restaurant.address}`;
+      return `https://map.naver.com/p/search/${encodeURIComponent(query)}`;
+    }
+
+    function matchesDistance(distanceKm) {
+      if (state.distance === "전체") return true;
+      if (state.distance === "3") return distanceKm <= 3;
+      if (state.distance === "6") return distanceKm <= 6;
+      if (state.distance === "over6") return distanceKm > 6;
+      return true;
+    }
+
+    function getFilteredRestaurants() {
+      const query = normalize(state.query);
+
+      const filtered = RESTAURANTS.filter((restaurant) => {
+        const haystack = normalize([
+          restaurant.name,
+          restaurant.category,
+          restaurant.menus.join(" "),
+          restaurant.address,
+          restaurant.features.join(" ")
+        ].join(" "));
+
+        const queryMatch = !query || haystack.includes(query);
+        const categoryMatch = state.category === "전체" || restaurant.category === state.category;
+        const serviceMatch = state.service === "전체" || restaurant.serviceType === state.service;
+        const distanceMatch = matchesDistance(restaurant.distanceKm);
+        const favoriteMatch = !state.favoritesOnly || favorites.has(restaurant.id);
+
+        return queryMatch && categoryMatch && serviceMatch && distanceMatch && favoriteMatch;
+      });
+
+      return filtered.sort((a, b) => {
+        if (state.sort === "name") {
+          return a.name.localeCompare(b.name, "ko-KR");
+        }
+        if (state.sort === "category") {
+          const categoryDiff = CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category);
+          return categoryDiff || a.distanceKm - b.distanceKm;
+        }
+        return a.distanceKm - b.distanceKm || a.name.localeCompare(b.name, "ko-KR");
+      });
+    }
+
+    function renderCategoryChips() {
+      elements.chips.innerHTML = CATEGORY_ORDER.map((category) => {
+        const count = category === "전체"
+          ? RESTAURANTS.length
+          : RESTAURANTS.filter((restaurant) => restaurant.category === category).length;
+
+        return `
+          <button
+            type="button"
+            class="chip"
+            data-category="${escapeHtml(category)}"
+            aria-pressed="${String(state.category === category)}"
+          >${escapeHtml(category)} <span aria-hidden="true">${count}</span></button>
+        `;
+      }).join("");
+
+      elements.chips.querySelectorAll(".chip").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.category = button.dataset.category;
+          renderCategoryChips();
+          renderRestaurants();
+        });
+      });
+    }
+
+    function createCard(restaurant) {
+      const isFavorite = favorites.has(restaurant.id);
+      const phoneAvailable = Boolean(restaurant.phone);
+      const phoneDisplay = phoneAvailable ? restaurant.phone : "확인 필요";
+      const confidenceClass = `badge-${restaurant.confidence}`;
+      const serviceClass = SERVICE_CLASS[restaurant.serviceType] || "service-unknown";
+      const menuText = restaurant.menus.join(" · ");
+
+      return `
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <div class="badges">
+                <span class="badge badge-category">${escapeHtml(restaurant.category)}</span>
+                <span class="badge ${confidenceClass}">${escapeHtml(CONFIDENCE_LABEL[restaurant.confidence])}</span>
+              </div>
+              <h3 class="restaurant-name">${escapeHtml(restaurant.name)}</h3>
+              <p class="restaurant-note">${escapeHtml(restaurant.note)}</p>
+            </div>
+            <div
+              class="distance-box"
+              title="실시간 길찾기가 아닌 약식 추정거리입니다."
+              aria-label="기준지에서 약 ${restaurant.distanceKm.toFixed(1)}킬로미터, 참고값"
+            >
+              <small>기준지에서</small>
+              <strong>약 ${restaurant.distanceKm.toFixed(1)}km</strong>
+              <span>참고값</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="menu-box">
+              <span class="row-label">대표 메뉴</span>
+              <div class="menu-list">${escapeHtml(menuText)}</div>
+            </div>
+
+            <dl class="info-list">
+              <div class="info-row">
+                <dt>주소</dt>
+                <dd>${escapeHtml(restaurant.address)}</dd>
+              </div>
+              <div class="info-row">
+                <dt>전화</dt>
+                <dd>${escapeHtml(phoneDisplay)}</dd>
+              </div>
+              <div class="info-row">
+                <dt>영업정보</dt>
+                <dd>${escapeHtml(restaurant.hours)}</dd>
+              </div>
+              <div class="info-row">
+                <dt>배달·포장</dt>
+                <dd class="${serviceClass}">${escapeHtml(restaurant.serviceText)}</dd>
+              </div>
+            </dl>
+
+            <div class="feature-tags" aria-label="특징">
+              ${restaurant.features.map((feature) => `<span class="feature">${escapeHtml(feature)}</span>`).join("")}
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a
+              class="action action-primary"
+              href="${naverMapUrl(restaurant)}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="${escapeHtml(restaurant.name)} 네이버 지도 열기"
+            >네이버 지도 ↗</a>
+
+            ${
+              phoneAvailable
+                ? `<a class="action" href="tel:${escapeHtml(restaurant.phone)}" aria-label="${escapeHtml(restaurant.name)}에 전화하기">전화</a>`
+                : `<button class="action" type="button" disabled aria-label="전화번호 확인 필요">전화 없음</button>`
+            }
+
+            <button
+              class="action copy-action"
+              type="button"
+              data-copy-address="${escapeHtml(restaurant.address)}"
+              aria-label="${escapeHtml(restaurant.name)} 주소 복사"
+            >주소 복사</button>
+
+            <button
+              class="action favorite-btn"
+              type="button"
+              data-favorite-id="${escapeHtml(restaurant.id)}"
+              aria-pressed="${String(isFavorite)}"
+              aria-label="${escapeHtml(restaurant.name)} ${isFavorite ? "저장 해제" : "저장"}"
+              title="${isFavorite ? "저장 해제" : "가게 저장"}"
+            >${isFavorite ? "★" : "☆"}</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderRestaurants() {
+      const restaurants = getFilteredRestaurants();
+
+      elements.meta.textContent = `총 ${RESTAURANTS.length}곳 중 ${restaurants.length}곳 표시 · 거리는 약식 추정값`;
+      elements.favoriteFilter.setAttribute("aria-pressed", String(state.favoritesOnly));
+      elements.favoriteFilter.textContent = state.favoritesOnly ? "★ 저장한 가게만" : "☆ 저장한 가게만";
+
+      if (!restaurants.length) {
+        elements.list.innerHTML = `
+          <div class="empty">
+            <strong>조건에 맞는 가게가 없습니다.</strong>
+            검색어나 필터를 변경하거나 ‘필터 초기화’를 눌러보세요.
+          </div>
+        `;
+        return;
+      }
+
+      elements.list.innerHTML = restaurants.map(createCard).join("");
+
+      elements.list.querySelectorAll("[data-favorite-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.favoriteId;
+          if (favorites.has(id)) {
+            favorites.delete(id);
+            showToast("저장한 가게에서 삭제했습니다.");
+          } else {
+            favorites.add(id);
+            showToast("가게를 저장했습니다.");
+          }
+          saveFavorites();
+          renderRestaurants();
+        });
+      });
+
+      elements.list.querySelectorAll("[data-copy-address]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          await copyText(button.dataset.copyAddress);
+        });
+      });
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast("주소를 복사했습니다.");
+      } catch {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand("copy");
+        textarea.remove();
+        showToast(copied ? "주소를 복사했습니다." : "주소 복사에 실패했습니다.");
+      }
+    }
+
+    function showToast(message) {
+      clearTimeout(toastTimer);
+      elements.toast.textContent = message;
+      elements.toast.classList.add("show");
+      toastTimer = setTimeout(() => elements.toast.classList.remove("show"), 1700);
+    }
+
+    function resetFilters() {
+      state.query = "";
+      state.category = "전체";
+      state.service = "전체";
+      state.distance = "전체";
+      state.sort = "distance";
+      state.favoritesOnly = false;
+
+      elements.search.value = "";
+      elements.service.value = "전체";
+      elements.distance.value = "전체";
+      elements.sort.value = "distance";
+
+      renderCategoryChips();
+      renderRestaurants();
+      showToast("필터를 초기화했습니다.");
+    }
+
+    elements.search.addEventListener("input", (event) => {
+      state.query = event.target.value;
+      renderRestaurants();
+    });
+
+    elements.service.addEventListener("change", (event) => {
+      state.service = event.target.value;
+      renderRestaurants();
+    });
+
+    elements.distance.addEventListener("change", (event) => {
+      state.distance = event.target.value;
+      renderRestaurants();
+    });
+
+    elements.sort.addEventListener("change", (event) => {
+      state.sort = event.target.value;
+      renderRestaurants();
+    });
+
+    elements.favoriteFilter.addEventListener("click", () => {
+      state.favoritesOnly = !state.favoritesOnly;
+      renderRestaurants();
+    });
+
+    elements.reset.addEventListener("click", resetFilters);
+
+    renderCategoryChips();
+    renderRestaurants();
+  </script>
+</body>
+</html>
